@@ -4,7 +4,7 @@ import { Searchbar } from "./searchbar/Searchbar";
 import axios from "axios"
 import ImageGallery from "./imageGallery/ImageGallery";
 import Button from "./button/Button";
-import { MagnifyingGlass } from 'react-loader-spinner'
+import Loader from "./loader/Loader"
 import Modal from "./modal/Modal";
 
 const App = () => {
@@ -39,15 +39,7 @@ const App = () => {
       {!isLoading
         ? <ImageGallery
           results={results} />
-        : <MagnifyingGlass
-          height="800"
-          width="800"
-          ariaLabel="MagnifyingGlass-loading"
-          wrapperStyle={{}}
-          wrapperClass="MagnifyingGlass-wrapper"
-          glassColor='#c0efff'
-          color='#e15b64'
-        />}
+        : <Loader />}
       <Modal />
       <Button
         loadMore={loadMore}
