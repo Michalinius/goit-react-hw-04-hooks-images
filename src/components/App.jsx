@@ -13,7 +13,6 @@ const App = () => {
   const [page, setPage] = useState(1);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const searching = event => {
     setIsLoading(true);
@@ -23,7 +22,6 @@ const App = () => {
     axios.get(`https://pixabay.com/api/?q=${event.target[1].value}&page=1&key=29678307-c5737503ea3de173bef225585&image_type=photo&orientation=horizontal&per_page=12`)
       .then(response => setResults(response.data.hits))
       .then(() => setIsLoading(false))
-    console.log(results)
   }
 
   const loadMore = async () => {
@@ -32,7 +30,6 @@ const App = () => {
       .then(response => setResults(oldResults => oldResults.concat(response.data.hits)))
       .then(() => setIsLoading(false))
     setPage(lastPage => lastPage + 1)
-    console.log(isModalOpen)
   }
 
   return (
