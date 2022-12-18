@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./globalStyles.css"
-import { Searchbar } from "./searchbar/Searchbar";
+import Searchbar from "./searchbar/Searchbar";
 import axios from "axios"
 import ImageGallery from "./imageGallery/ImageGallery";
 import Button from "./button/Button";
